@@ -1,0 +1,12 @@
+{
+  "name": "empresas-react-native",
+  "displayName": "empresas-react-native",
+  "expo": {
+    "name": "empresas-react-native",
+    "slug": "empresas-react-native",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
