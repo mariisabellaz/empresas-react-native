@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 
-import React from 'react';
+import React, {useState} from 'react';
 import {StatusBar} from "react-native";
 import {NavigationContainer} from '@react-navigation/native';
 import {ThemeProvider} from 'styled-components';
@@ -14,7 +14,10 @@ import {
 import AppLoading from 'expo-app-loading';
 
 import Routes from './src/routes/app.routes';
+import {ConnectionAvailable} from "./src/pages";
+
 import {DefaultTheme} from './src/theme';
+import {checkConnected} from './src/utils/check-connected';
 
 export default function App() {
     const [fontsLoaded] = useFonts({
@@ -23,17 +26,26 @@ export default function App() {
         Montserrat_500Medium,
         Montserrat_600SemiBold
     });
+    const [connectStatus, setConnectStatus] = useState(false)
 
-    if(!fontsLoaded) {
-        return <AppLoading />
+    checkConnected().then(res => {
+        // @ts-ignore
+        setConnectStatus(res)
+    })
+
+
+    if (!fontsLoaded) {
+        return <AppLoading/>
     }
 
     return (
-       <ThemeProvider theme={DefaultTheme}>
-           <NavigationContainer>
-               <StatusBar barStyle="light-content" translucent/>
-               <Routes/>
-           </NavigationContainer>
-       </ThemeProvider>
+        <ThemeProvider theme={DefaultTheme}>
+            {connectStatus ?
+                <NavigationContainer>
+                    <StatusBar barStyle="light-content" translucent/>
+                    <Routes/>
+                </NavigationContainer>
+                : <ConnectionAvailable/>}
+        </ThemeProvider>
     );
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import {DevSettings} from "react-native";
 
 import {Container, PhoneConnection, Title, Description, ButtonWrapper} from "./styles";
 import {Button} from "../../components";
@@ -17,7 +18,7 @@ const ConnectionAvailable = () => {
             <Description>{`${strings.description}`}</Description>
 
             <ButtonWrapper>
-                <Button label={`${strings.tryAgain}`}/>
+                <Button label={`${strings.tryAgain}`} onPress={() => DevSettings.reload()}/>
             </ButtonWrapper>
         </Container>
     );
