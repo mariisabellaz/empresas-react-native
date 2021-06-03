@@ -7,6 +7,7 @@ export default {
         header: '#1D1D27',
         background: '#FFFFFF',
         shape: '#676372',
+        border: '#BDCADB',
         text: {
             default: '#140F26',
             light: '#6C7B8A',
@@ -59,9 +60,9 @@ export default {
 
     fontsize: {
         title: RFValue(26),
-        subtitle: RFValue(20),
-        medium: RFValue(18),
-        regular: RFValue(16),
-        helper: RFValue(14),
+        subtitle: RFValue(18),
+        medium: RFValue(16),
+        regular: RFValue(14),
+        helper: RFValue(12),
     }
 }
