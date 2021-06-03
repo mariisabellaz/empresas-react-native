@@ -1,9 +1,11 @@
 import React from 'react';
-import {Container} from './styles';
+import {Container, Label} from './styles';
 
 const Main = () => {
     return (
-        <Container></Container>
+        <Container>
+            <Label>Teste de fonte</Label>
+        </Container>
     );
 }
 
