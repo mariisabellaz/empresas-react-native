@@ -8,11 +8,13 @@ export default {
         background: '#FFFFFF',
         shape: '#676372',
         border: '#BDCADB',
+        input: '#F5F5F5',
         text: {
             default: '#140F26',
             light: '#6C7B8A',
             helper: '#BDCADB',
-            inverted: '#FFFFFF'
+            inverted: '#FFFFFF',
+            error: '#B12340'
         },
         gradient: {
             primary: '#4048EF',

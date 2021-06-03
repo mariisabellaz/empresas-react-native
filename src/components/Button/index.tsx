@@ -5,12 +5,13 @@ import {Container, Label, ButtonWrapper} from './styles';
 
 
 interface ButtonProps extends RectButtonProps{
-    label: string
+    label: string,
+    onPress: () => void
 }
 
-const Header = ({label, ...rest} : ButtonProps) => {
+const Header = ({label, onPress} : ButtonProps) => {
     return (
-        <Container {...rest}>
+        <Container onPress={onPress}>
             <ButtonWrapper>
                 <Label>{label}</Label>
             </ButtonWrapper>

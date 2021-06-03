@@ -13,7 +13,7 @@ import {
 } from '@expo-google-fonts/montserrat';
 import AppLoading from 'expo-app-loading';
 
-import Routes from './src/routes/app.routes';
+import Routes from './src/routes/auth.routes';
 import {ConnectionAvailable} from "./src/pages";
 
 import {DefaultTheme} from './src/theme';
@@ -38,14 +38,17 @@ export default function App() {
         return <AppLoading/>
     }
 
+    /*if (connectStatus) {
+        return <ConnectionAvailable/>
+    }*/
+
     return (
         <ThemeProvider theme={DefaultTheme}>
-            {connectStatus ?
-                <NavigationContainer>
-                    <StatusBar barStyle="light-content" translucent/>
-                    <Routes/>
-                </NavigationContainer>
-                : <ConnectionAvailable/>}
+
+            <NavigationContainer>
+                <StatusBar barStyle="light-content" translucent/>
+                <Routes/>
+            </NavigationContainer>
         </ThemeProvider>
     );
 }
