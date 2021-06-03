@@ -1,23 +1,10 @@
-import 'react-native-gesture-handler';
-
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Container} from './styles';
 
 const Main = () => {
     return (
-        <View style={styles.container}>
-            <Text>teste</Text>
-        </View>
+        <Container></Container>
     );
 }
 
 export default Main;
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
