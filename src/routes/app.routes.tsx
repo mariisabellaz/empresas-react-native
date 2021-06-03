@@ -2,7 +2,7 @@ import * as React from 'react';
 import {useTheme} from "styled-components";
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {Main} from "../pages";
+import {Main, ConnectionAvailable, EnterpriseDetails} from "../pages";
 
 const App = createStackNavigator();
 
@@ -23,6 +23,8 @@ const AppRoutes = () => {
             headerBackTitleVisible: false,
             headerTintColor: theme.colors.background
         }}>
+            <App.Screen name="EnterpriseDetails" component={EnterpriseDetails}/>
+            <App.Screen name="ConnectionAvailable" component={ConnectionAvailable}/>
             <App.Screen name="Main" component={Main}/>
         </App.Navigator>
     );

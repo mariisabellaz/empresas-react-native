@@ -63,6 +63,7 @@ export default {
         subtitle: RFValue(18),
         medium: RFValue(16),
         regular: RFValue(14),
+        address: RFValue(12.8),
         helper: RFValue(12),
     }
 }
